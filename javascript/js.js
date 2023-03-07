@@ -25,7 +25,7 @@ function display(){
         data+=`<div class="caption d-flex p-5">
         <h3 class="w-25">${bookmarkArray[i].bookmarkName}</h2>
         <a href="${bookmarkArray[i].bookmarkUrl}" class="btn btn-primary me-3 px-4 py-2 " target="_blank" >Visit</a>
-        <a href="" class="btn btn-danger px-4 py-2" onclick="delBookmark(i)">Delete</a>
+        <button class="btn btn-danger px-4 py-2" onclick="delBookmark(${i})">Delete</button>
     </div>`
     }
     
@@ -33,6 +33,7 @@ function display(){
 }
 
 function delBookmark(i){ 
-    bookmarkArray.splice(i,0);
+    console.log(i);
+    bookmarkArray.splice(i,1);
     display();
 }
